@@ -8,7 +8,7 @@ HOUR(to_timestamp_ltz(started_at)) AS HOUR_STARTED_AT,
 {{get_season('STARTED_AT')}} AS SEASON_OF_YEAR
 
 from 
-{{ source('demo', 'bike') }}
+{{ ref('stg_bike') }}
 where STARTED_AT != 'started_at'
 )
 
